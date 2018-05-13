@@ -2,9 +2,11 @@ package com.capgemini.steps;
 
 import com.capgemini.ourWebdriver.BrowserFactory;
 import com.capgemini.ourWebdriver.TearDown;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
+import cucumber.api.java.nl.Gegeven;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
