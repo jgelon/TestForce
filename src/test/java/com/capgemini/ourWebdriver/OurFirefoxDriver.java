@@ -23,7 +23,7 @@ public class OurFirefoxDriver extends FirefoxDriver implements OurWebDriver {
     }
 
     public static OurFirefoxDriver getBrowser() {
-        System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\drivers\\geckodriver-windows-64bit.exe");
         if (browser == null) {
             browser = new OurFirefoxDriver();
         } else if (browser.getSessionId() == null) {

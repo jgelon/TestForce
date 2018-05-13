@@ -22,7 +22,7 @@ public class OurChromeDriver extends ChromeDriver implements OurWebDriver {
     }
 
     public static OurChromeDriver getBrowser() {
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\drivers\\chromedriver-windows-32bit.exe");
         if (browser == null) {
             browser = new OurChromeDriver();
         } else if (browser.getSessionId() == null) {

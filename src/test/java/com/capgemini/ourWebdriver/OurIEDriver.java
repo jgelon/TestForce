@@ -21,7 +21,7 @@ public class OurIEDriver extends InternetExplorerDriver implements OurWebDriver 
     }
 
     public static OurIEDriver getBrowser() {
-        System.setProperty("webdriver.ie.driver", System.getProperty("user.dir") + "\\IEDriverServer.exe");
+        System.setProperty("webdriver.ie.driver", System.getProperty("user.dir") + "\\drivers\\internetexplorerdriver-windows-32bit.exe");
         if (browser == null) {
             browser = new OurIEDriver();
         } else if (browser.getSessionId() == null) {
