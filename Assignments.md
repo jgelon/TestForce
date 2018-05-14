@@ -1,7 +1,7 @@
 # Assignments
 
-All the files which you will need to edit in these assignments are located in **src/test/java/com/project**.
-> It might be a good idea to open the local html file that is used in the first assignments in a chrome browser (**project/resources/website/index.html**).
+All the files which you will need to edit in these assignments are located in **src/test/java/com/capgemini**.
+> It might be a good idea to open the local html file that is used in the first assignments in a chrome browser (**main/resources/index.html**).
 
 ## Exercise 1
 

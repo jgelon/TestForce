@@ -30,6 +30,3 @@ cucumber-java-selenium
 
 ## Assignments
 The assignments can be found in the file [Assignments.md](Assignments.md)
-
-
-If you have any questions please feel free to contact me: mazin.inaad@capgemini.com
