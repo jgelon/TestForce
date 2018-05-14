@@ -7,7 +7,7 @@ All the files which you will need to edit in these assignments are located in **
 
  1. In **loan.feature**, Right-click on the scenario name 'request a car loan' and choose 'Run Scenario...'
  2. As you can see the webpage gives an error message because the desired amount to borrow is lower than the minimum. Update the step "**And** the amount I want to borrow is '1000'" so that this error message is no longer given.
-     > The steps are located in **steps/loan_steps**
+     > The steps are located in **steps/CGLoansSteps**
  3. Create the step "**And** I continue to explanation" (just remove the #). The background color of the step will turn into brown box, this means that there is no java connected to this step. Use Alt + Enter, choose 'Create step definition', choose loan_steps (com.project.steps).
  4. Check the generated java code, remove the auto generated `throw new PendingException();`. This exception is generated to make sure that you understand java code a bit before you can run a successful execution.
  5. Use Chrome to open **index.html** and right-click the "Continue to explanation" button and select "Inspect" to identify the selector for this button.

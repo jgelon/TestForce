@@ -8,10 +8,10 @@ import org.openqa.selenium.WebDriver;
 
 import java.net.MalformedURLException;
 
-public class CGLoans {
+public class CGLoansSteps {
     private final WebDriver browser;
 
-    public CGLoans() throws MalformedURLException {
+    public CGLoansSteps() throws MalformedURLException {
         browser = BrowserFactory.getWebDriver();
     }
 
