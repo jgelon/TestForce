@@ -9,10 +9,10 @@ import org.openqa.selenium.WebDriver;
 import java.net.MalformedURLException;
 
 public class CGLoans {
-    private WebDriver browser;
+    private final WebDriver browser;
 
     public CGLoans() throws MalformedURLException {
-        this.browser = BrowserFactory.getWebDriver();
+        browser = BrowserFactory.getWebDriver();
     }
 
     @Given("^I have opened the loan request page$")

@@ -1,7 +1,5 @@
 package com.capgemini.ourWebdriver;
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -16,13 +14,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class OurFirefoxDriver extends FirefoxDriver implements OurWebDriver {
 
-    static OurFirefoxDriver browser;
+    private static OurFirefoxDriver browser;
 
     private OurFirefoxDriver() {
 
     }
 
-    public static OurFirefoxDriver getBrowser() {
+    static OurFirefoxDriver getBrowser() {
         System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\drivers\\geckodriver-windows-64bit.exe");
         if (browser == null) {
             browser = new OurFirefoxDriver();
@@ -30,41 +28,39 @@ public class OurFirefoxDriver extends FirefoxDriver implements OurWebDriver {
             browser = new OurFirefoxDriver();
         }
         return browser;
-
     }
 
-
-    public WebElement waitForElement(String selector) {
-        WebDriverWait wait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
+    public WebElement waitForElement(final String selector) {
+        final WebDriverWait wait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
         return wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(selector)));
     }
 
-    public WebElement waitForElement(By by) {
-        WebDriverWait wait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
+    public WebElement waitForElement(final By by) {
+        final WebDriverWait wait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
         return wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
-    public WebElement waitForVisible(String selector) {
-        WebDriverWait wait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
+    public WebElement waitForVisible(final String selector) {
+        final WebDriverWait wait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(selector)));
     }
 
-    public WebElement waitForVisible(By by) {
-        WebDriverWait wait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
+    public WebElement waitForVisible(final By by) {
+        final WebDriverWait wait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
-    public void scrollToElement(WebElement element) {
+    public void scrollToElement(final WebElement element) {
         ((JavascriptExecutor) browser).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
     public void waitForAjax() {
-        WebDriverWait webDriverWait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
+        final WebDriverWait webDriverWait = new WebDriverWait(browser, IMPLICIT_WAIT_TIMEOUT);
         webDriverWait.until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver driver) {
-                String scriptToExecute =
+            public Boolean apply(final WebDriver driver) {
+                final String scriptToExecute =
                         "return jQuery.active == 0;";
-                Boolean ajaxDone = Boolean.valueOf(((JavascriptExecutor) driver).executeScript(scriptToExecute).toString());
+                final Boolean ajaxDone = Boolean.valueOf(((JavascriptExecutor) driver).executeScript(scriptToExecute).toString());
                 return ajaxDone ? true : null;
             }
         });

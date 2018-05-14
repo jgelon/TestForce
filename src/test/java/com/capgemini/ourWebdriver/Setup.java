@@ -7,7 +7,7 @@ import java.net.MalformedURLException;
 
 public class Setup {
 
-    WebDriver browser;
+    private WebDriver browser;
 
     @Before
     public void beforeScenario() throws MalformedURLException {
