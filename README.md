@@ -24,7 +24,9 @@ cucumber-java-selenium
 - If it is your first IntelliJ project then in IntelliJ:
     - Select 'Open' project and browse to the test project folder you just created and open the folder
     - Open project structure (CTRL + Shift + Alt + S), navigate to the 'Project' tab, choose new in Project SDK section, select JDK and direct to your java/jdk folder
-    - Open Settings (CTRL + ALT + S), navigate to 'Plugins' and install the plugins: Gherkin and Cucumber for Java (**Don't** install the Substeps plugin)
+    - Open Settings (CTRL + ALT + S), navigate to 'Plugins' and install the plugins: `Gherkin` and `Cucumber for Java` (**Don't** install the `Substeps` plugin)
+	- Open the Maven Projects Tool window (Navigation bar > `View` > `Tool Windows` > `Maven Projects`), this will open a view on the right side of the screen.
+	- Double click under `testforce` > `Lifecycle` the `compile` option. This will install the drivers of Chrome, Firefox and InternetExplorer.
 
   
 
