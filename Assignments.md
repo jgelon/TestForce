@@ -1,85 +1,46 @@
-Assignments
-==================
+# Assignments
 
-##### Exercise 1
-a) Create step 'And I travel to Utrecht' (just remove the #). The background color of
-the step will turn into brown box, this means that there is no java
-connected to this step. Use Alt + Enter, choose 'Create step definition',
-choose NS (com.capgemini.steps).<br/>
-b) Check the generated java code, remove the auto generated `throw new PendingException();`.
-This exception is generated to make sure that you understand java code a bit
-before you can run a successful execution.<br/>
-c) Use Chrome to navigate to `https://www.ns.nl/producten/s/enkele-reis`
-and open the Developer tools using F12 to identify the the selector for the 'To' field on the NS website.<br/>
-d) In IntelliJ use copy paste from the `iTravelFromAmsterdam()` method, change
-the CSS selector to selector you found in firepath.<br/>
-e) Is the `.sendKeys()` the right method to use here?<br/>
-f) Right-click on scenario naam 'travel from Amsterdam to Utrecht' and choose 'Run Scenario:..'
+All the files which you will need to edit in these assignments are located in **src/test/java/com/project**.
+> It might be a good idea to open the local html file that is used in the first assignments in a chrome browser (**project/resources/website/index.html**).
 
+## Exercise 1
 
-<br/><br/>
-*NOTE: You will learn the most from finding things out yourself. If you
-are stuck and don't know the answer, try to google it. Try to use words
-like cucumber, selenium or java to find your answer. Next exersises will be
-less descriptive. Remember it is not about finishing the exercises first
-it's about learning as much as possible.*<br/><br/>
+ 1. In **loan.feature**, Right-click on the scenario name 'request a car loan' and choose 'Run Scenario...'
+ 2. As you can see the webpage gives an error message because the desired amount to borrow is lower than the minimum. Update the step "**And** the amount I want to borrow is '1000'" so that this error message is no longer given.
+     > The steps are located in **steps/loan_steps**
+ 3. Create the step "**And** I continue to explanation" (just remove the #). The background color of the step will turn into brown box, this means that there is no java connected to this step. Use Alt + Enter, choose 'Create step definition', choose loan_steps (com.project.steps).
+ 4. Check the generated java code, remove the auto generated `throw new PendingException();`. This exception is generated to make sure that you understand java code a bit before you can run a successful execution.
+ 5. Use Chrome to open **index.html** and right-click the "Continue to explanation" button and select "Inspect" to identify the selector for this button.
+ 6. In IntelliJ use copy paste from the `iSelectLoanTypeCarLoan()` method, change the CSS selector to selector you found in Chrome.
+ 7. Is `.click()` the right method to use here?
+ 8. Run the scenario
 
-##### Exercise 2
-a) Create new steps for every field on the webpage. <br/>
-b) For every step copy paste the findElement, change the selector, use
- the correct interaction. <br/>
-c) If an unique selector is difficult to find check if CheatSheet.docx can help you.
+## Exercise 2
 
-##### Exercise 3
-`www.ns.nl` did a good job in adding id's to their webpage, this makes testing a lot easier. 
-However not all webpage use id's. To be prepared for those 'bad' webpages, repeat Excercise 2, 
-but don't use any # this time.  
-<br/>
-*NOTE: If a webpage does have id's please use selectors refering to them. Elements will be found quickly and your coding will be readable. Not using them now is just an exercise.* <br/>
+1.  Create steps that allows you to continue to the personal data page
+2.  Create new steps for every field on the page. For every step, copy paste the `findElement`, change the selector and use the correct interaction.
+    > The CheatSheet.docx has tips for finding unique selectors.
+3. Can you upload a file?
 
-##### Exercise 4
-a) Add ticket to shopping cart and check if the price is what you expect.<br/>
-b) Use smart waits if elements are not immediately available<br/>
-c) You can use Assert.assertEquals() to verify if the shown price is correct.
+## Exercise 3
 
-##### Exercise 5
-Parameterize input and output data in steps
+1. Create a step after "**Given** I have opened the loan request page" to click the different options under "Why do you need a loan?".
+2. Create a step to close the pop-up. What issues do you face?
+    > Use smart waits if elements are not immediately available.
 
-##### Exercise 6
-a) Create a second scenario in the same feature file<br/>
-b) Reuse steps from the first scenario<br/>
-c) Execute the second scenario
+## Exercise 4
 
-##### Exercise 7
-Use Scenario Outlines to execute scenario several times with different data (visit https://docs.cucumber.io/docs/gherkin.html for an example)
+1. Parameterize the input data in the step "**And** the amount I want to borrow is '1000'". (See Exercise 1.2)
+2. Can you parameterize other data as well?
 
-##### Exercise 8
-Make a scenario that navigates back and forward to the shopping cart.
-What issues do you face?
+## Exercise 5
 
-##### Exercise 9
-Use datatables to input more lines of data in a scenario. Use a for loop
-to access all the data in the table.
+1. Create a second scenario in the same feature file.
+2. Reuse the steps from the first scenario.
+3. Execute the second scenario.
 
-##### Exercise 10
-Make a new feature file and test the  `http://www.deltalloyd.nl/overlijdensrisicoverzekering/` page. What new issues do you face at this page?
+## Exercise 6
 
-<br/><br/>
-------------
-##### Advanced exercises
-a) Rename the step **I clicked accept in cookie popup** to **I click accept
- in cookie popup** and create code yourself to click on the accept button.
-  First try without looking at the origal code. Sometimes the cookie popup
-   does not appear, how can you solve that problem?<br/>
-b) Make screenshots and save them<br/>
-c) Make sure your scenario works in Firefox, Chrome and IE using the same code<br/>
-d) Make an own implicit wait in the Our...Driver classes<br/>
-
-
-
-
-
-
-
-
-
+1. Use faker to generate random data?
+2. Reduce your gherkin to Given When Then (so 3 lines, max 4/5 lines)?
+3. Add pages layer?
