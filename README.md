@@ -24,7 +24,7 @@ cucumber-java-selenium
 - If it is your first IntelliJ project then in IntelliJ:
     - Select 'Open' project and browse to the test project folder you just created and open the folder
     - Open project structure (CTRL + Shift + Alt + S), navigate to the 'Project' tab, choose new in Project SDK section, select JDK and direct to your java/jdk folder
-    - Open Settings (CTRL + ALT + S), navigate to 'Plugins' and install the plugins: Gherkin and Cucumber for Java
+    - Open Settings (CTRL + ALT + S), navigate to 'Plugins' and install the plugins: Gherkin and Cucumber for Java (**Don't** install the Substeps plugin)
 
   
 
