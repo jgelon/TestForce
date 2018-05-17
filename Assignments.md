@@ -3,6 +3,8 @@
 All the files which you will need to edit in these assignments are located in **src/test/java/com/capgemini**.
 > It might be a good idea to open the local html file that is used in the first assignments in a chrome browser (**main/resources/index.html**).
 
+_NOTE: You will learn the most from finding things out yourself. If you are stuck and don't know the answer, try to google it. Try to use words like cucumber, selenium or java to find your answer. Next exersises will be less descriptive. Remember it is not about finishing the exercises first it's about learning as much as possible._
+
 ## Exercise 1
 
  1. In **loan.feature**, Right-click on the scenario name 'request a car loan' and choose 'Run Scenario...'
