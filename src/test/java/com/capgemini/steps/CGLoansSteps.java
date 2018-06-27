@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 
 import java.net.MalformedURLException;
 
+import static com.capgemini.utils.FileHelper.getRootPath;
+
 public class CGLoansSteps {
     private final WebDriver browser;
 
@@ -17,7 +19,7 @@ public class CGLoansSteps {
 
     @Given("^I have opened the loan request page$")
     public void iHaveOpenedTheLoanRequestPage() throws Throwable {
-        browser.get(System.getProperty("user.dir") + "\\src\\main\\resources\\index.html");
+        browser.get("file:///" + getRootPath() + "/src/main/resources/index.html");
         Thread.sleep(1000);
     }
 

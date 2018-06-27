@@ -1,10 +1,12 @@
 package com.capgemini.ourWebdriver;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import org.apache.commons.io.filefilter.WildcardFileFilter;
+
+import java.io.*;
 import java.net.MalformedURLException;
 import java.util.Properties;
+
+import static com.capgemini.utils.FileHelper.getRootPath;
 
 public class BrowserFactory {
 
@@ -27,6 +29,20 @@ public class BrowserFactory {
         return getBrowserOfType(browserType);
     }
 
+    static String getDriverFile(String browserName) {
+        FileFilter fileFilter = new WildcardFileFilter("*"+browserName+"*");
+        File[] dir = new File(getRootPath() + File.separator + "drivers" + File.separator).listFiles(fileFilter);
+        String driverPath = "";
+        try {
+            driverPath = dir[0].getAbsolutePath();
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("No driver found for '"+browserName+"' in the folder drivers.\nStopping execution.");
+            System.exit(1);
+        }
+        return driverPath;
+    }
+
     private static OurWebDriver getBrowserOfType(final String browserType) {
         if (browserType == null) {
             browser = OurFirefoxDriver.getBrowser();
@@ -34,7 +50,6 @@ public class BrowserFactory {
             browser = OurChromeDriver.getBrowser();
         } else if (browserType.equals("ie")) {
             browser = OurIEDriver.getBrowser();
-
         } else {
             browser = OurFirefoxDriver.getBrowser();
         }
@@ -47,8 +62,7 @@ public class BrowserFactory {
         String browserType = null;
 
         try {
-
-            input = new FileInputStream(System.getProperty("user.dir") + "\\browser.properties");
+            input = new FileInputStream(getRootPath() + "\\browser.properties");
             prop.load(input);
             browserType = prop.getProperty("browser.type");
         } catch (final IOException e) {
@@ -56,5 +70,4 @@ public class BrowserFactory {
         }
         return browserType;
     }
-
 }

@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static com.capgemini.ourWebdriver.BrowserFactory.getDriverFile;
+
 /**
  * Created by dlammers on 2/27/2017.
  */
@@ -21,7 +23,7 @@ public class OurFirefoxDriver extends FirefoxDriver implements OurWebDriver {
     }
 
     static OurFirefoxDriver getBrowser() {
-        System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\drivers\\geckodriver-windows-64bit.exe");
+        System.setProperty("webdriver.gecko.driver", getDriverFile("gecko"));
         if (browser == null) {
             browser = new OurFirefoxDriver();
         } else if (browser.getSessionId() == null) {

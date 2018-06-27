@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static com.capgemini.ourWebdriver.BrowserFactory.getDriverFile;
+
 /**
  * Created by dlammers on 2/27/2017.
  */
@@ -21,7 +23,7 @@ public class OurChromeDriver extends ChromeDriver implements OurWebDriver {
     }
 
     static OurChromeDriver getBrowser() {
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\drivers\\chromedriver-windows-32bit.exe");
+        System.setProperty("webdriver.chrome.driver", getDriverFile("chrome"));
         if (browser == null) {
             browser = new OurChromeDriver();
         } else if (browser.getSessionId() == null) {
